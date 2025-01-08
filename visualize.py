@@ -1,6 +1,10 @@
 import numpy as np
 import librosa
 import librosa.display
+
+# Set the backend to TkAgg (Qt causes issues on WSL2 Ubuntu 24.04 LTS, use Tkinter instead)
+import matplotlib
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
 
@@ -46,6 +50,6 @@ def visualize_audio_as_complex_matrix(audio_file):
     plt.show()
 
 if __name__ == "__main__":
-    audio_file = "1khz_audio.wav"
+    audio_file = "./audio/1khz_sine.wav"
     visualize_audio_as_complex_matrix(audio_file)
 
